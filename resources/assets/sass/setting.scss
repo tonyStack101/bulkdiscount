@@ -1,0 +1,59 @@
+body {
+  background-color: #F4F6F8;
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+.next-card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px 0 rgba(63,63,68,.15);
+  color: #31373d;
+  margin-bottom: 1rem;
+}
+.next-card-section {
+  padding: 1rem 0;
+}
+.discount-generate, .discount-apply, .discount-requirement, .discount-for-customer, .discount-limit {
+  padding-left: 1rem;
+}
+.discount-note {
+  color: #6c757d!important;
+}
+.discount-one-per-order {
+  padding-left: 1rem;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  .input-group-prepend {
+    margin-right: -1px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+}
+.input-group-text {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+}
+.save-discount-wrap {
+  position: relative;
+}
+.cancel-button {
+  position: absolute;
+  left: 0;
+}
+.save-button {
+  position: absolute;
+  right: 0;
+}
+

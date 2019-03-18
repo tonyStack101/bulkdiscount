@@ -1,0 +1,15 @@
+.install_app_wrap {
+  text-align: center;
+  input {
+    width: 80%;
+    margin: auto;
+    display: block;
+  }
+  .button-style {
+    width: calc(50% - 32px);
+    margin: auto;
+    max-width: 150px;
+    padding: 5px 30px;
+    font-size: 15px;
+  }
+}
