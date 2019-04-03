@@ -29,7 +29,6 @@ class CreateShopTable extends Migration
             $table->string('shop_owner')->nullable();
             $table->string('plan_name');
             $table->string('myshopify_domain');
-
             $table->string('status')->nullable();
             $table->string('is_version_app')->nullable();
             $table->string('access_token')->nullable();
