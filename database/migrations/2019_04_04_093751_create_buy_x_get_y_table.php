@@ -15,6 +15,7 @@ class CreateBuyXGetYTable extends Migration
     {
         Schema::create('buy_x_get_y', function (Blueprint $table) {
             $table->bigInteger('id');
+            $table->bigInteger('price_rule_id');
             $table->integer('quantity_buy');
             $table->bigInteger('collection_id_buy');
             $table->bigInteger('product_id_buy');
@@ -25,6 +26,7 @@ class CreateBuyXGetYTable extends Migration
             $table->bigInteger('product_variant_id_get');
             $table->timestamps();
 
+            $table->foreign('price_rule_id')->references('id')->on('price_rule')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('collection_id_buy')->references('id')->on('custom_collections')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('collection_id_get')->references('id')->on('custom_collections')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('product_id_buy')->references('id')->on('product')->onDelete('cascade')->onUpdate('cascade');
