@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductTable extends Migration
+class CreateProductVariantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('product', function (Blueprint $table) {
+        Schema::create('product_variants', function (Blueprint $table) {
             $table->bigInteger('id');
-            $table->string('title', 1000);
-            $table->string('handle', 1000)->nullable();
-            $table->string('image', 2000)->nullable();
-            $table->bigInteger('shop_id');
+            $table->bigInteger('product_id');
+            $table->bigInteger('product_image_id');
+            $table->bigInteger('title');
+            $table->double('price', 8, 2);
             $table->bigInteger('price_rule_id');
             $table->timestamps();
-            $table->softDeletes();
             $table->primary('id');
-            $table->index('id');
 
-            $table->foreign('shop_id')->references('id')->on('shop')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('product_image_id')->references('id')->on('product_image')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('price_rule_id')->references('id')->on('price_rule')->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -37,6 +36,6 @@ class CreateProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('product_variants');
     }
 }

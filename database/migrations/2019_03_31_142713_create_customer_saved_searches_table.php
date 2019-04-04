@@ -17,10 +17,12 @@ class CreateCustomerSavedSearchesTable extends Migration
             $table->bigInteger('id');
             $table->string('name', 200);
             $table->bigInteger('shop_id');
+            $table->bigInteger('price_rule_id');
             $table->primary('id');
             $table->index('id');
 
-            $table->foreign('shop_id')->references('id')->on('shop');
+            $table->foreign('shop_id')->references('id')->on('shop')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('price_rule_id')->references('id')->on('price_rule')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
